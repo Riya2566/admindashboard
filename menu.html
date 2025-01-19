@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 1000px;
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 24px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        td button {
+            background-color: #f44336;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        td button:hover {
+            background-color: #d32f2f;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .form-inputs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .form-inputs input {
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        .form-inputs input[type="text"] {
+            width: 30%;
+        }
+
+        .form-inputs input[type="number"] {
+            width: 20%;
+        }
+
+        .form-inputs button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            border: none;
+        }
+
+        .form-inputs button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Menu</h1>
+
+        <!-- Add New Item Button -->
+        <button onclick="addNewItem()">Add New Item</button>
+
+        <!-- Table to display menu items -->
+        <table id="menuTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Menu items will appear here -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // Function to add a new item to the table
+        function addNewItem() {
+            // Prompt for user input for Name, Description, and Price
+            const name = prompt("Enter item name:", "Default Item Name");
+            const description = prompt("Enter item description:", "Default Item Description");
+            const price = prompt("Enter item price:", "$0.00");
+
+            // Create a new row
+            const tableBody = document.querySelector("#menuTable tbody");
+            const newRow = document.createElement("tr");
+
+            // Create cells for Name, Description, and Price
+            const nameCell = document.createElement("td");
+            nameCell.textContent = name;  // User inputted name
+            const descriptionCell = document.createElement("td");
+            descriptionCell.textContent = description;  // User inputted description
+            const priceCell = document.createElement("td");
+            priceCell.textContent = price;  // User inputted price
+
+            // Create the Delete button
+            const deleteCell = document.createElement("td");
+            const deleteButton = document.createElement("button");
+            deleteButton.textContent = "Delete";
+            deleteButton.onclick = function() {
+                tableBody.removeChild(newRow); // Remove the row when clicked
+            };
+            deleteCell.appendChild(deleteButton);
+
+            // Append the cells to the row
+            newRow.appendChild(nameCell);
+            newRow.appendChild(descriptionCell);
+            newRow.appendChild(priceCell);
+            newRow.appendChild(deleteCell);
+
+            // Add the row to the table body
+            tableBody.appendChild(newRow);
+        }
+    </script>
+</body>
+</html>

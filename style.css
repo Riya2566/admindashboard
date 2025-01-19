@@ -1,0 +1,117 @@
+/* General Styles */
+body {
+   font-family: Arial, sans-serif;
+   background-color: #f4f4f4;
+   margin: 0;
+   padding: 0;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   min-height: 100vh;
+}
+
+h1 {
+   text-align: center;
+   color: #333;
+}
+
+.container {
+   width: 80%;
+   max-width: 1000px;
+   background-color: white;
+   border-radius: 8px;
+   padding: 20px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   margin-top: 20px;
+}
+
+button {
+   background-color: #4CAF50;
+   color: white;
+   padding: 12px 24px;
+   font-size: 16px;
+   margin-bottom: 20px;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   transition: background-color 0.3s ease;
+}
+
+button:hover {
+   background-color: #45a049;
+}
+
+/* Table Styling */
+table {
+   width: 100%;
+   border-collapse: collapse;
+   margin-top: 20px;
+}
+
+table, th, td {
+   border: 1px solid #ddd;
+}
+
+th, td {
+   padding: 12px;
+   text-align: left;
+}
+
+th {
+   background-color: #4CAF50;
+   color: white;
+}
+
+td button {
+   background-color: #f44336;
+   color: white;
+   border: none;
+   padding: 6px 12px;
+   border-radius: 5px;
+   cursor: pointer;
+   transition: background-color 0.3s ease;
+}
+
+td button:hover {
+   background-color: #d32f2f;
+}
+
+tr:hover {
+   background-color: #f1f1f1;
+}
+
+/* Form Input Styling */
+.form-inputs {
+   display: flex;
+   gap: 10px;
+   margin-bottom: 20px;
+}
+
+.form-inputs input {
+   padding: 8px;
+   font-size: 16px;
+   border: 1px solid #ddd;
+   border-radius: 5px;
+   width: 100%;
+}
+
+.form-inputs input[type="text"] {
+   width: 30%;
+}
+
+.form-inputs input[type="number"] {
+   width: 20%;
+}
+
+.form-inputs button {
+   background-color: #007BFF;
+   color: white;
+   padding: 10px 20px;
+   border-radius: 5px;
+   cursor: pointer;
+   border: none;
+}
+
+.form-inputs button:hover {
+   background-color: #0056b3;
+}
